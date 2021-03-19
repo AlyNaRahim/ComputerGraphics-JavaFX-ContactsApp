@@ -34,7 +34,7 @@
               <MenuItem fx:id="exitMenu" mnemonicParsing="false" onAction="#onClickExit" text="Exit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Details">
+          <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem fx:id="aboutMenu" mnemonicParsing="false" onAction="#onClickAbout" text="About" />
             </items>
@@ -43,7 +43,7 @@
       </MenuBar>
       <AnchorPane layoutX="14.0" layoutY="25.0" prefHeight="64.0" prefWidth="654.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label layoutX="21.0" layoutY="20.0" text="Users" AnchorPane.leftAnchor="39.0">
+            <Label layoutX="21.0" layoutY="20.0" text="Users" underline="true" AnchorPane.leftAnchor="20.0">
                <font>
                   <Font name="Times New Roman" size="21.0" />
                </font>
