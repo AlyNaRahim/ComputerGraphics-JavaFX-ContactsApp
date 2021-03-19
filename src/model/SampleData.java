@@ -15,7 +15,7 @@ public class SampleData {
         backingList.add(new Person("Ethan", "Nieto", "random notes 7", LocalDate.of(1990,03,04),"Male"));
         backingList.add(new Person("Elli", "Combes", "random notes 8", LocalDate.of(1990,03,04),"Male"));
         backingList.add(new Person("Andy", "Toupin", "random notes 9", LocalDate.of(1990,03,04),"Female"));
-        backingList.add(new Person("Zenia", "Linwood", "random notes 10", LocalDate.of(1990,03,04),"Female"));
+        backingList.add(new Person("Zenia", "Linwood", "random notes 10", LocalDate.of(1990,03,04),"Female", "resources/images/profile1.jpg"));
     }
 
     /*

@@ -34,7 +34,7 @@
               <MenuItem fx:id="exitMenu" mnemonicParsing="false" onAction="#onClickExit" text="Exit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Deatils">
+          <Menu mnemonicParsing="false" text="Details">
             <items>
               <MenuItem fx:id="aboutMenu" mnemonicParsing="false" onAction="#onClickAbout" text="About" />
             </items>
@@ -120,7 +120,7 @@
                                     <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
                                     <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
                                     <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="31.0" vgrow="ALWAYS" />
-                                    <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="142.0" vgrow="ALWAYS" />
+                                    <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="116.0" vgrow="ALWAYS" />
                                  </rowConstraints>
                                  <children>
                                     <Label text="First Name">

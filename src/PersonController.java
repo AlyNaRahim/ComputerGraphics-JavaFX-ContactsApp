@@ -11,8 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -71,7 +70,6 @@ public class PersonController implements Initializable {
         addNewUserButton.disableProperty().bind(listView.getSelectionModel().selectedItemProperty().isNull());
 
         // if no item is selected
-        //TODO not to enter blank item
         addButton.setDisable(false);
         updateButton.setDisable(true);
 
@@ -85,9 +83,9 @@ public class PersonController implements Initializable {
 
         // sort by lastname first, then by firstname; ignore notes
         sortedList.setComparator((p1, p2) -> {
-            int result = p1.getLastname().compareToIgnoreCase(p2.getLastname());
+            int result = p1.getFirstname().compareToIgnoreCase(p2.getFirstname());
             if (result == 0) {
-                result = p1.getFirstname().compareToIgnoreCase(p2.getFirstname());
+                result = p1.getLastname().compareToIgnoreCase(p2.getLastname());
             }
             return result;
         });
@@ -122,7 +120,7 @@ public class PersonController implements Initializable {
                 viewAnchorPane.setVisible(false);
                 firstnameTextField.setText("");
                 lastnameTextField.setText("");
-                datePicker.setValue(LocalDate.now());
+                datePicker.setValue(null);
                 genderComboBox.setValue("");
             }
         });
@@ -155,19 +153,14 @@ public class PersonController implements Initializable {
         informationAlert.showAndWait();
     }
 
+
+
     @FXML
     void onClickEdit(MouseEvent event) {
         formAnchorPane.setVisible(true);
         viewAnchorPane.setVisible(false);
         updateButton.setDisable(false);
         addButton.setDisable(true);
-
-        //TODO disable new user button
-
-        firstnameTextField.setText("");
-        lastnameTextField.setText("");
-        datePicker.setValue(LocalDate.now());
-        genderComboBox.setValue("");
 
         firstnameTextField.setText(selectedPerson.getFirstname());
         lastnameTextField.setText(selectedPerson.getLastname());
@@ -178,7 +171,6 @@ public class PersonController implements Initializable {
 
     @FXML
     void onClickNewUser(ActionEvent event) {
-        //TODO update database
         formAnchorPane.setVisible(true);
         viewAnchorPane.setVisible(false);
         updateButton.setDisable(true);
@@ -186,7 +178,7 @@ public class PersonController implements Initializable {
 
         firstnameTextField.setText("");
         lastnameTextField.setText("");
-        datePicker.setValue(LocalDate.now());
+        datePicker.setValue(null);
         genderComboBox.setValue("");
     }
 
@@ -218,8 +210,6 @@ public class PersonController implements Initializable {
 
         listView.getSelectionModel().selectedItemProperty().addListener(personChangeListener);
         modifiedProperty.set(false);
-
-        //TODO update database
 
         formAnchorPane.setVisible(false);
         viewAnchorPane.setVisible(true);
